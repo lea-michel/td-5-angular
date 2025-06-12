@@ -1,3 +1,12 @@
 <!-- Affichage de la liste des passagers -->
 
+ <div class="vols">
+@if (passagers.length!=null) {
+    @for (passager of passagers; track $index) {
+    <app-passager [passager]="passager"></app-passager>
+    }
 
+}
+
+
+</div>

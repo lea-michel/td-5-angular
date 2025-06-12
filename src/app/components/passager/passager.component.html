@@ -1,1 +1,13 @@
 <!-- Affichage d'un passager -->
+
+<!-- Affichage d'un vol -->
+
+@if(passager!=null){
+    <div class="passager-card">
+
+        <img src="{{passager.image}}" alt="photo passager" class="photo-passager">
+        <p class="name">{{passager.nom}}</p>
+        <p class="classe-vol">{{passager.classeVol}}</p>
+        <div class="bagages-soute"><mat-icon>work</mat-icon><p>X{{passager.nbBagagesSoute}}</p></div>    
+    </div>
+}

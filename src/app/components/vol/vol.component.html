@@ -1,1 +1,21 @@
 <!-- Affichage d'un vol -->
+
+@if(vol!=null){
+    <div class="vol-card">
+        @if(type==="decollages"){
+            <div class="icon"><mat-icon>flight_takeoff</mat-icon></div>
+        }@else {
+            <div class="icon"><mat-icon>flight_land</mat-icon></div>
+        }
+        <p class="icao_number">{{vol.icao}}</p>
+        <p class="matricule">{{vol.matricule}}</p>
+        <p class="aeroport_depart">{{vol.aeroportDepart}}</p>
+        <div class="icon"><mat-icon>arrow_right_alt</mat-icon></div>
+        @if(vol.aeroportArrivee!=null){
+            <p class="aeroport_arrivee">{{vol.aeroportArrivee}}</p>
+        }@else {
+            <p class="aeroport_arrivee">Inconnu</p>
+        }
+        <img src="assets/{{vol.compagnie}}.png" alt="{{vol.compagnie}}" class="logo">
+    </div>
+}

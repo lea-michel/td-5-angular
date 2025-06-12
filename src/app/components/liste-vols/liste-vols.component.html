@@ -1,1 +1,12 @@
 <!-- Affichage de la liste des vols -->
+ <div class="vols">
+@if (vols.length!=null) {
+    @for (vol of vols; track $index) {
+    <app-vol   [type]="type" [vol]="vol" (click)="onVolSelected(vol)"></app-vol>
+    }
+
+}
+
+
+
+</div>

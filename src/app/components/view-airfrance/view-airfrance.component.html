@@ -1,16 +1,24 @@
 <div class="container">
-  <div class="title"><h1>DECOLLAGES</h1></div>
+  <div class="title">@if (type()==='decollages') {
+    <h1>DECOLLAGES</h1>
+    }@else {
+      <h1>ATTERRISSAGES</h1>
+    }
+
+    
+  
+  </div>
   <div class="sections">
     <div class="left">
       <div class="top">
-        <app-filtres></app-filtres>
+        <app-filtres (event)="onFiltersSubmitted($event)"></app-filtres>
       </div>
       <div class="bottom">
-        <app-liste-vols></app-liste-vols>
+        <app-liste-vols [type]="computedType()" [vols]="vols()" (selectedVol)="setVolSelected($event)"></app-liste-vols>
       </div>
     </div>
     <div class="right">
-      <app-liste-passagers></app-liste-passagers>
+      <app-liste-passagers [passagers]="passengers()"></app-liste-passagers>
     </div>
   </div>
 </div>

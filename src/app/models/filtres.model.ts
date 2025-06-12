@@ -1,7 +1,7 @@
 import { IAeroport } from './aeroport.model';
 
 export interface IFiltres {
-  aeroport: IAeroport;
-  debut: Date;
-  fin: Date;
+  aeroport: IAeroport|null;
+  debut: Date|null;
+  fin: Date|null;
 }
