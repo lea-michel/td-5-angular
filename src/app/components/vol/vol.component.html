@@ -1,21 +1,19 @@
 <!-- Affichage d'un vol -->
 
-@if(vol!=null){
-    <div class="vol-card">
-        @if(type==="decollages"){
-            <div class="icon"><mat-icon>flight_takeoff</mat-icon></div>
-        }@else {
-            <div class="icon"><mat-icon>flight_land</mat-icon></div>
-        }
-        <p class="icao_number">{{vol.icao}}</p>
-        <p class="matricule">{{vol.matricule}}</p>
-        <p class="aeroport_depart">{{vol.aeroportDepart}}</p>
-        <div class="icon"><mat-icon>arrow_right_alt</mat-icon></div>
-        @if(vol.aeroportArrivee!=null){
-            <p class="aeroport_arrivee">{{vol.aeroportArrivee}}</p>
-        }@else {
-            <p class="aeroport_arrivee">Inconnu</p>
-        }
-        <img src="assets/{{vol.compagnie}}.png" alt="{{vol.compagnie}}" class="logo">
+@if(vol != null){
+  <div class="vol-card">
+    <div class="vol-section icon">
+      <mat-icon>{{ type === 'decollages' ? 'flight_takeoff' : 'flight_land' }}</mat-icon>
     </div>
+    <div class="vol-section">{{ vol.icao }}</div>
+    <div class="vol-section">{{ vol.matricule }}</div>
+    <div class="vol-section">{{ vol.aeroportDepart }}</div>
+    <div class="vol-section icon">
+      <mat-icon>arrow_right_alt</mat-icon>
+    </div>
+    <div class="vol-section">{{ vol.aeroportArrivee || 'Inconnu' }}</div>
+    <div class="vol-section logo-container">
+      <img src="assets/{{ vol.compagnie }}.png" alt="{{ vol.compagnie }}" class="logo" />
+    </div>
+  </div>
 }

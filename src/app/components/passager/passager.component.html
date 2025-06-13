@@ -6,8 +6,12 @@
         @if (showPhoto) {
             <img src="{{passager.image}}" alt="photo passager" class="photo-passager">
         }
+       
         <p class="name" matTooltip="{{passager.email}}" matTooltipPosition="above">{{passager.nom}}</p>
         <p class="classe-vol" [ngClass]="passager.classeVol">{{passager.classeVol}}</p>
-        <div class="bagages-soute" [ngClass]="{'exces-bagage' : checkExcesBagage()}"><mat-icon>work</mat-icon><p>X{{passager.nbBagagesSoute}}</p></div>    
+        <div class="bagages-soute" [ngClass]="{'exces-bagage' : checkExcesBagage()}">
+            <mat-icon>work</mat-icon><p>X{{passager.nbBagagesSoute}}</p>
+        </div> 
+          
     </div>
 }
