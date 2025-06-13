@@ -6,7 +6,4 @@ export const routes: Routes = [
   {
     path: '**', redirectTo: 'decollages'
   },
-  {
-    path: '', redirectTo: 'decollages'
-  },
 ];
