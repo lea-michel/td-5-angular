@@ -10,7 +10,7 @@ export class PassagerService {
     constructor(private http: HttpClient) { }
     
     getPassengers(icao: string): Observable<Passager[]>{
-        return this.http.get<any>(`https://randomuser.me/api/?results=20&inc=name,picture&seed=${icao}`).pipe(
+        return this.http.get<any>(`https://randomuser.me/api/?results=20&inc=name,picture,email&seed=${icao}`).pipe(
               map((response) => response.results
                 .map((dto: IPassagerDto) => new Passager(dto))
             ));

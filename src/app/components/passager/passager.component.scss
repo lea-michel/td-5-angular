@@ -9,20 +9,14 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  
-  
 
   mat-icon {
     font-size: 20px;
     color: #333;
   }
-  p{
-    font-weight: 500;
-    color: #333;
-  }
+  
   .photo-passager {
     height: 45px;
-    // margin-right: auto;
   }
 }
 
@@ -30,3 +24,20 @@
     display: flex;
     align-items: center;
 }
+
+.STANDARD{
+  color: blue;
+}
+.PREMIUM{
+  color: green;
+}
+.BUSINESS{
+  color: red;
+}
+
+.exces-bagage{
+  background-color: rgb(210, 63, 63);
+  color: white;
+}
+
+ 

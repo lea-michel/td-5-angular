@@ -1,9 +1,11 @@
 <!-- Affichage de la liste des passagers -->
 
- <div class="vols">
-@if (passagers.length!=null) {
+ <div class="passagers">
+   
+@if (passagers  && passagers.length>0) {
+     <p><mat-slide-toggle [checked]="showPhotos()" (change)="toggleShowPhotos($event)">Afficher les photos</mat-slide-toggle></p>
     @for (passager of passagers; track $index) {
-    <app-passager [passager]="passager"></app-passager>
+    <app-passager [passager]="passager" [showPhoto]="showPhotos()"></app-passager>
     }
 
 }
